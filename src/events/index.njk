@@ -12,9 +12,136 @@ layout: base.njk
   </div>
 
   <!-- Events Content -->
-  <section class="content-section">
+  <section class="events-page">
     <div class="container">
-      <p>ISC2 is an international, nonprofit membership association for information security leaders. We're committed to helping our members learn, grow and thrive. More than 140,000 certified members strong, we empower professionals who touch every aspect of information security.</p>
-      <p>Stay tuned for upcoming events and meetings. Follow us on <a href="{{ site.social.linkedin }}">LinkedIn</a> or join our <a href="{{ site.social.discord }}">Discord</a> for the latest announcements.</p>
+
+      <h2 class="events-page-title">ISC2 Tampa Chapter Events</h2>
+
+      {# ── Upcoming Events ── #}
+      {% set hasUpcoming = false %}
+      {% for event in events %}
+        {% if event.date | isFuture %}
+          {% set hasUpcoming = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if hasUpcoming %}
+        {% for event in events %}
+          {% if event.date | isFuture %}
+            <div class="event-card event-card--{{ event.type }}">
+              {# Date badge(s) #}
+              <div class="event-date-group">
+                <div class="event-date-badge">
+                  <span class="event-date-month">{{ event.date | dateMonth }}</span>
+                  <span class="event-date-day">{{ event.date | dateDay }}</span>
+                  <span class="event-date-dow">{{ event.date | dateDayOfWeek }}</span>
+                </div>
+                {% if event.endDate %}
+                  <span class="event-date-sep">-</span>
+                  <div class="event-date-badge">
+                    <span class="event-date-month">{{ event.endDate | dateMonth }}</span>
+                    <span class="event-date-day">{{ event.endDate | dateDay }}</span>
+                    <span class="event-date-dow">{{ event.endDate | dateDayOfWeek }}</span>
+                  </div>
+                {% endif %}
+              </div>
+
+              {# Event image or fallback badge #}
+              {% if event.image %}
+                <img class="event-logo-img" src="{{ event.image }}" alt="{{ event.title }}">
+              {% else %}
+                <div class="event-logo event-logo--{{ event.type }}">
+                  {% if event.type == "community" %}
+                    <span>BSides<br>Tampa</span>
+                  {% else %}
+                    <span>ISC2<br>Chapter</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {# Event details #}
+              <div class="event-details">
+                <h3 class="event-title">{{ event.title }}</h3>
+                <div class="event-meta">
+                  <span class="event-meta-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    {{ event | formatEventTime }}
+                  </span>
+                  <span class="event-meta-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    {{ event.location }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {# ── Past Events ── #}
+      {% set hasPast = false %}
+      {% for event in events %}
+        {% if not (event.date | isFuture) %}
+          {% set hasPast = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if hasPast %}
+        <h3 class="events-section-heading">Past Events</h3>
+
+        {% for event in events %}
+          {% if not (event.date | isFuture) %}
+            <div class="event-card event-card--{{ event.type }}">
+              {# Date badge(s) #}
+              <div class="event-date-group">
+                <div class="event-date-badge">
+                  <span class="event-date-month">{{ event.date | dateMonth }}</span>
+                  <span class="event-date-day">{{ event.date | dateDay }}</span>
+                  <span class="event-date-dow">{{ event.date | dateDayOfWeek }}</span>
+                </div>
+                {% if event.endDate %}
+                  <span class="event-date-sep">-</span>
+                  <div class="event-date-badge">
+                    <span class="event-date-month">{{ event.endDate | dateMonth }}</span>
+                    <span class="event-date-day">{{ event.endDate | dateDay }}</span>
+                    <span class="event-date-dow">{{ event.endDate | dateDayOfWeek }}</span>
+                  </div>
+                {% endif %}
+              </div>
+
+              {# Event image or fallback badge #}
+              {% if event.image %}
+                <img class="event-logo-img" src="{{ event.image }}" alt="{{ event.title }}">
+              {% else %}
+                <div class="event-logo event-logo--{{ event.type }}">
+                  {% if event.type == "community" %}
+                    <span>BSides<br>Tampa</span>
+                  {% else %}
+                    <span>ISC2<br>Chapter</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {# Event details #}
+              <div class="event-details">
+                <h3 class="event-title">{{ event.title }}</h3>
+                <div class="event-meta">
+                  <span class="event-meta-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    {{ event | formatEventTime }}
+                  </span>
+                  <span class="event-meta-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    {{ event.location }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      <p class="events-footer-note">Follow us on <a href="{{ site.social.linkedin }}">LinkedIn</a> or join our <a href="{{ site.social.discord }}">Discord</a> for the latest announcements.</p>
+
     </div>
   </section>
