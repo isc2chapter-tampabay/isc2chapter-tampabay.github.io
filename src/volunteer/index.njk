@@ -1,0 +1,36 @@
+---
+title: "Volunteer"
+description: "Volunteer with the ISC2 Tampa Bay Chapter. Explore opportunities to give back, earn CPEs, and grow your career."
+layout: base.njk
+---
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Volunteer</h1>
+    </div>
+  </div>
+
+  <!-- Volunteer Content -->
+  <section class="content-section">
+    <div class="container">
+      <h2>Get Involved</h2>
+      <p>Volunteering with the ISC2 Tampa Bay Chapter is one of the most rewarding ways to invest in your cybersecurity career. By contributing your time and expertise, you earn CPE credits toward your certifications, build leadership skills that set you apart, and expand your professional network across the Tampa Bay security community. Most importantly, you help shape the direction of the local security community and make a lasting impact on the professionals around you.</p>
+      <p>You do not need to be an ISC2 member to volunteer. We welcome anyone with a passion for cybersecurity and a willingness to contribute.</p>
+
+      <h2>Volunteer Opportunities</h2>
+      <div class="volunteer-grid">
+        {% for role in volunteerRoles %}
+        <div class="volunteer-card">
+          <h3>{{ role.name }}</h3>
+          <p>{{ role.description }}</p>
+          <span class="volunteer-commitment">{{ role.commitment }}</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      <h2>Express Your Interest</h2>
+      <p>Ready to get involved? Fill out the form below and a board member will follow up with you about next steps.</p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdKH7CBjzxMgRromAOQzurYz9eRqvw321O37u0xN0M3CRjqQ/viewform?embedded=true" title="Volunteer Interest Form" width="100%" height="900" frameborder="0">Loading&hellip;</iframe>
+    </div>
+  </section>

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Event Coordination",
+    "description": "Help plan and run quarterly chapter meetings, the annual holiday party, and BSides Tampa. Includes venue coordination, speaker logistics, and day-of support.",
+    "commitment": "5-10 hrs/quarter"
+  },
+  {
+    "name": "Marketing & Social Media",
+    "description": "Manage the chapter's LinkedIn presence, create event promotional graphics, and help grow community engagement online.",
+    "commitment": "2-4 hrs/month"
+  },
+  {
+    "name": "Speaker Outreach",
+    "description": "Recruit speakers for chapter meetings and BSides Tampa. Review talk proposals and coordinate with presenters on topics and logistics.",
+    "commitment": "3-5 hrs/quarter"
+  },
+  {
+    "name": "Technology & Web",
+    "description": "Maintain the chapter website, manage membership systems, and support technical infrastructure for events and communications.",
+    "commitment": "2-4 hrs/month"
+  },
+  {
+    "name": "Education & Training",
+    "description": "Develop and deliver member-led classes, bootcamps, and study groups covering topics like CISSP prep, cloud security, and penetration testing.",
+    "commitment": "5-8 hrs/quarter"
+  }
+]

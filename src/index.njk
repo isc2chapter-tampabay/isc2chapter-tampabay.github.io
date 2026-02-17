@@ -12,10 +12,10 @@ layout: base.njk
   </section>
 
   <!-- Welcome -->
-  <section class="welcome">
+  <section class="welcome" id="main-content">
     <div class="container">
-      <h2><span>Welcome</span>, why don't you join us?</h2>
-      <p>ISC2&reg; is the largest not-for-profit membership body of certified information security professionals worldwide, with nearly 80,000 members in more than 135 countries. Globally recognized as the Gold Standard, ISC2 issues the Certified Information Systems Security Professional (CISSP&reg;) and related concentrations, as well as the Certified Secure Software Lifecycle Professional (CSSLP&reg;), Certified Authorization Professional (CAP&reg;), and Systems Security Certified Practitioner (SSCP&reg;) credentials to qualifying candidates.</p>
+      <h2>Tampa Bay's Home for <span>InfoSec</span> Professionals</h2>
+      <p>The ISC2 Tampa Bay Chapter brings together information security professionals across the West-Central Florida area. Whether you hold a CISSP, SSCP, or are just getting started in cybersecurity, our chapter offers quarterly meetings, hands-on training, and a community that helps you grow. We're also the official host of the annual BSides Tampa conference.</p>
     </div>
   </section>
 
@@ -30,33 +30,82 @@ layout: base.njk
   <div class="features">
     <div class="feature-card">
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
       </div>
       <h3>Network</h3>
       <p>Our meetings and events allow for networking with Info-Sec professionals across Tampa Bay.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
       </div>
       <h3>Connect to the community</h3>
       <p>Looking for a way to give back? We offer events that fund raise or educate about security in the local community.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/></svg>
       </div>
       <h3>Expand your skills</h3>
       <p>We offer member-led classes and boot camps with topics ranging from cloud security to pen-testing.</p>
     </div>
   </div>
 
+  <!-- Upcoming Events -->
+  <section class="upcoming-preview">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      {% set eventCount = 0 %}
+      {% for event in events %}
+        {% if event.date | isFuture and eventCount < 2 %}
+          {% set eventCount = eventCount + 1 %}
+          <div class="upcoming-card">
+            <div class="upcoming-date">
+              <span class="upcoming-month">{{ event.date | dateMonth }}</span>
+              <span class="upcoming-day">{{ event.date | dateDay }}</span>
+            </div>
+            <div class="upcoming-info">
+              <h3>{{ event.title }}</h3>
+              <p>{{ event | formatEventTime }} · {{ event.location }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      <a href="/events/" class="upcoming-link">View All Events →</a>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to connect with Tampa Bay's security community?</h2>
+      <div class="cta-banner-actions">
+        <a href="/membership/" class="btn">Become a Member</a>
+        <a href="/events/" class="btn-outline btn-outline--light">View Events</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Mission -->
   <section class="mission">
     <div class="container">
       <h2>Mission <span>Driven</span></h2>
-      <p>The mission of the Tampa Bay Chapter of ISC2 is to expand the knowledge of its members, students and professionals in the study of information technology, network security, cryptography, cloud security, penetration testing, data privacy, software security, digital forensic, legal issues in computer security, computer hacking, CTF (Capture The Flag) and malware analysis. The chapter also sponsors various training activities throughout the year in various topics such as CISSP, Cloud Security, SSCP, Digital Forensic, Penetration Testing, Software Analysis, Information Technology Security in Healthcare and Social Engineering.</p>
-      <p>The chapter is also the official host of the annual BSides Tampa Information Technology Security Conference.</p>
-      <p>The Tampa Bay chapter of ISC2 is a registered 501(c)(3) educational non-profit organization. All donations and gifts to Tampa Bay chapter of ISC2 are tax deductible under section 501(c)(3) of the Internal Revenue Code (sections 170, 2055, 2106, 2522).</p>
+      <p>The Tampa Bay Chapter of ISC2 advances the knowledge of information security professionals, students, and practitioners through education, training, and community engagement.</p>
+      <div class="focus-areas">
+        <span class="focus-pill">Network Security</span>
+        <span class="focus-pill">Cloud Security</span>
+        <span class="focus-pill">Penetration Testing</span>
+        <span class="focus-pill">Digital Forensics</span>
+        <span class="focus-pill">Cryptography</span>
+        <span class="focus-pill">Data Privacy</span>
+        <span class="focus-pill">Software Security</span>
+        <span class="focus-pill">CTF Competitions</span>
+        <span class="focus-pill">Malware Analysis</span>
+        <span class="focus-pill">Social Engineering</span>
+        <span class="focus-pill">CISSP Training</span>
+        <span class="focus-pill">SSCP Training</span>
+      </div>
+      <p class="mission-highlight">We're also the official host of the annual <strong>BSides Tampa</strong> Information Technology Security Conference.</p>
+      <p class="mission-note">The Tampa Bay chapter of ISC2 is a registered 501(c)(3) educational non-profit. All donations are tax deductible under section 501(c)(3) of the Internal Revenue Code.</p>
     </div>
   </section>
