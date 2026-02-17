@@ -1,0 +1,384 @@
+/* ============================================
+   ISC2 Tampa Bay Chapter - Static Site Styles
+   ============================================ */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green: #54804b;
+  --green-hover: #3e6438;
+  --dark: #333;
+  --body-text: #4a4a4a;
+  --light-gray: #f5f5f5;
+  --white: #fff;
+  --border: #e0e0e0;
+  --max-width: 1140px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--body-text);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+a { color: var(--green); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--green-hover); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Top Bar ---------- */
+.top-bar {
+  background: var(--white);
+  padding: 6px 0;
+  font-size: .85rem;
+}
+.top-bar .container { display: flex; align-items: center; }
+.top-bar a { color: var(--body-text); display: flex; align-items: center; gap: 6px; }
+.top-bar svg { width: 16px; height: 16px; fill: var(--green); flex-shrink: 0; }
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logo img { height: 50px; width: auto; }
+.main-nav { display: flex; align-items: center; }
+.main-nav ul { list-style: none; display: flex; gap: 0; }
+.main-nav a {
+  color: var(--dark);
+  font-weight: 500;
+  font-size: .95rem;
+  padding: 8px 16px;
+  display: block;
+  transition: color .2s;
+}
+.main-nav a:hover, .main-nav a.active { color: var(--green); }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle svg { width: 28px; height: 28px; fill: var(--dark); }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(rgba(40, 50, 40, .75), rgba(40, 50, 40, .75)),
+              url('../images/hero-bg.jpg') center/cover no-repeat;
+  color: var(--white);
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.hero .tagline {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  opacity: .9;
+}
+.btn {
+  display: inline-block;
+  background: var(--green);
+  color: var(--white);
+  padding: 14px 36px;
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background .2s;
+}
+.btn:hover { background: var(--green-hover); color: var(--white); }
+
+/* ---------- Page Header (subpages) ---------- */
+.page-header {
+  background: linear-gradient(135deg, var(--green), var(--green-hover));
+  color: var(--white);
+  padding: 32px 20px;
+}
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ---------- Welcome Section ---------- */
+.welcome {
+  text-align: center;
+  padding: 60px 20px;
+}
+.welcome h2 {
+  font-size: 2rem;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+.welcome h2 span { color: var(--green); text-decoration: underline; }
+.welcome p { max-width: 800px; margin: 0 auto; font-size: 1rem; }
+
+/* ---------- Photo Gallery ---------- */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.photo-gallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* ---------- Features ---------- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 60px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.feature-card {
+  text-align: center;
+  padding: 30px 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.feature-icon svg { width: 32px; height: 32px; fill: var(--white); }
+.feature-card h3 { color: var(--dark); font-size: 1.15rem; margin-bottom: 10px; }
+.feature-card p { font-size: .9rem; }
+
+/* ---------- Mission Section ---------- */
+.mission {
+  padding: 60px 20px;
+  background: var(--light-gray);
+}
+.mission .container { max-width: 900px; }
+.mission h2 {
+  font-size: 2.2rem;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+.mission h2 span { color: var(--green); }
+.mission p { margin-bottom: 16px; }
+
+/* ---------- Content Section (generic) ---------- */
+.content-section {
+  padding: 60px 20px;
+}
+.content-section .container { max-width: 900px; }
+.content-section h2 {
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+.content-section p { margin-bottom: 16px; }
+.content-section ul { margin: 0 0 16px 24px; }
+.content-section li { margin-bottom: 8px; }
+
+/* ---------- Leadership Grid ---------- */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 30px;
+  padding: 40px 0;
+}
+.leader {
+  text-align: center;
+}
+.leader a { display: block; color: inherit; }
+.leader a:hover h3 { color: var(--green); }
+.leader img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 14px;
+  filter: grayscale(100%);
+}
+.leader h3 {
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: 4px;
+  transition: color .2s;
+}
+.leader .title {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999;
+}
+
+/* ---------- Membership Actions ---------- */
+.membership-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.btn-outline {
+  display: inline-block;
+  border: 2px solid var(--green);
+  color: var(--green);
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: .95rem;
+  border-radius: 4px;
+  transition: all .2s;
+}
+.btn-outline:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+/* ---------- Benefits List ---------- */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.benefits-list li {
+  padding: 10px 0 10px 30px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.benefits-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 16px;
+  height: 16px;
+  background: var(--green);
+  border-radius: 50%;
+  opacity: .7;
+}
+
+/* ---------- Sponsorship Tier ---------- */
+.sponsor-tier {
+  background: var(--light-gray);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 30px 0;
+}
+.sponsor-tier h3 {
+  color: var(--green);
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--light-gray);
+  padding: 50px 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.footer-about .logo-footer { height: 45px; margin-bottom: 16px; }
+.footer-about p { font-size: .9rem; margin-bottom: 16px; }
+.social-links { display: flex; gap: 10px; }
+.social-links a {
+  width: 36px;
+  height: 36px;
+  background: var(--green);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+.social-links a:hover { background: var(--green-hover); }
+.social-links svg { width: 18px; height: 18px; fill: var(--white); }
+.footer-nav h4, .footer-contact h4 {
+  color: var(--green);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.footer-nav ul { list-style: none; }
+.footer-nav li { margin-bottom: 8px; }
+.footer-nav a { color: var(--body-text); font-size: .9rem; }
+.footer-nav a:hover { color: var(--green); }
+.footer-contact a { color: var(--body-text); font-size: .9rem; display: flex; align-items: center; gap: 8px; }
+.footer-contact svg { width: 18px; height: 18px; fill: var(--green); flex-shrink: 0; }
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+  font-size: .8rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  }
+  .main-nav.open ul { display: flex; }
+  .main-nav a { padding: 12px 20px; }
+
+  .hero { padding: 60px 20px; }
+  .hero h1 { font-size: 2rem; }
+
+  .photo-gallery { grid-template-columns: 1fr; max-width: 400px; }
+  .features { grid-template-columns: 1fr; max-width: 500px; }
+
+  .leadership-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+
+  .membership-actions { flex-direction: column; }
+  .membership-actions .btn, .membership-actions .btn-outline { text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .leadership-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.6rem; }
+}
