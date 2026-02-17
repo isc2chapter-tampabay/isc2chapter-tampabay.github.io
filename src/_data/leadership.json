@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Michael Rogers",
+    "title": "Chapter President",
+    "image": "/images/michael-rogers.jpeg",
+    "linkedin": "https://www.linkedin.com/in/mjrogers/"
+  },
+  {
+    "name": "Bill Davison",
+    "title": "Vice President",
+    "image": "/images/bill-davison.jpg",
+    "linkedin": "https://www.linkedin.com/in/billdavison/"
+  },
+  {
+    "name": "Elvira Reyes",
+    "title": "Secretary",
+    "image": "/images/elvira-reyes.jpg",
+    "linkedin": "https://www.linkedin.com/in/elvira-r-3b2a2a76/"
+  },
+  {
+    "name": "David Chen",
+    "title": "Treasurer",
+    "image": "/images/david-chen.jpg",
+    "linkedin": "https://www.linkedin.com/in/david-chen-0526376/"
+  },
+  {
+    "name": "Joshua Grose",
+    "title": "Membership Chair and Technology Director",
+    "image": "/images/joshua-grose.jpg",
+    "linkedin": "https://www.linkedin.com/in/joshuagrose/"
+  },
+  {
+    "name": "Ahmed Almoailu",
+    "title": "Sponsorship Director",
+    "image": "/images/ahmed-almoailu.jpeg",
+    "linkedin": "https://www.linkedin.com/in/ahmed-almoailu/"
+  },
+  {
+    "name": "Tyler Brescia",
+    "title": "Merchandise Director and Planning Committee",
+    "image": "/images/tyler-brescia.jpg",
+    "linkedin": "https://www.linkedin.com/in/tyler-brescia/"
+  },
+  {
+    "name": "Aftiam Ramli",
+    "title": "Marketing and Communications Director",
+    "image": "/images/aftiam-ramli.jpg",
+    "linkedin": "https://www.linkedin.com/in/aftiam/"
+  },
+  {
+    "name": "Mark Babcock",
+    "title": "Brand Ambassador",
+    "image": "/images/mark-babcock.jpg",
+    "linkedin": "https://www.linkedin.com/in/markababcock/"
+  },
+  {
+    "name": "Sean Whitcomb",
+    "title": "",
+    "image": "/images/sean-whitcomb.png",
+    "linkedin": "https://www.linkedin.com/in/sean-whitcomb-4748a9140/"
+  }
+]

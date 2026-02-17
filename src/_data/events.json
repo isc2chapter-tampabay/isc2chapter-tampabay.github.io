@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Quarterly ISC2 Chapter Meeting (Q1)",
+    "date": "2026-03-07",
+    "endDate": null,
+    "startTime": "10:00 AM",
+    "endTime": "2:00 PM",
+    "location": "Stetson University",
+    "type": "chapter",
+    "url": null
+  },
+  {
+    "title": "BSides Tampa 2026",
+    "date": "2026-05-15",
+    "endDate": "2026-05-16",
+    "startTime": "8:00 AM",
+    "endTime": "5:00 PM",
+    "location": "USF Marshall Center",
+    "type": "community",
+    "url": null
+  },
+  {
+    "title": "ISC2 2025 Q4 Holiday Party",
+    "date": "2025-12-06",
+    "endDate": null,
+    "startTime": "10:00 AM",
+    "endTime": "2:00 PM",
+    "location": "Stetson University",
+    "type": "holiday",
+    "url": null
+  },
+  {
+    "title": "Quarterly ISC2 Chapter Meeting (Q3)",
+    "date": "2025-09-20",
+    "endDate": null,
+    "startTime": "10:00 AM",
+    "endTime": "2:00 PM",
+    "location": "Stetson University",
+    "type": "chapter",
+    "url": null
+  },
+  {
+    "title": "BSides Tampa 2025",
+    "date": "2025-05-16",
+    "endDate": "2025-05-17",
+    "startTime": "8:00 AM",
+    "endTime": "10:00 PM",
+    "location": "USF Marshall Center",
+    "type": "community",
+    "url": null
+  },
+  {
+    "title": "Quarterly ISC2 Chapter Meeting (Q1)",
+    "date": "2025-02-22",
+    "endDate": null,
+    "startTime": "10:00 AM",
+    "endTime": "2:00 PM",
+    "location": "Stetson University",
+    "type": "chapter",
+    "url": null
+  },
+  {
+    "title": "Quarterly ISC2 Chapter Meeting (Q3)",
+    "date": "2024-07-20",
+    "endDate": null,
+    "startTime": "10:00 AM",
+    "endTime": "2:00 PM",
+    "location": "Stetson University",
+    "type": "chapter",
+    "url": null
+  }
+]

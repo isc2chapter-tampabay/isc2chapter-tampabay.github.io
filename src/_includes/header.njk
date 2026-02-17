@@ -1,0 +1,28 @@
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <a href="mailto:{{ site.email }}">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        {{ site.email }}
+      </a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="{{ site.logo }}" alt="{{ site.name }} Chapter">
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('mainNav').classList.toggle('open')">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+        <ul>
+          {%- for item in navigation %}
+          <li><a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
