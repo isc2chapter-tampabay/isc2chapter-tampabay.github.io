@@ -24,6 +24,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx @11ty/eleventy
+      - name: Check for broken internal links
+        run: npx --yes linkinator ./_site --recurse --skip "^(?!file://).*" --verbosity error
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
