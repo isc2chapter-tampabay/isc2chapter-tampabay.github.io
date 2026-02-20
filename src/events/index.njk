@@ -8,14 +8,13 @@ layout: base.njk
   <div class="page-header">
     <div class="container">
       <h1>Events</h1>
+      <p class="page-header-subtitle">Meetings, training, and conferences throughout the year.</p>
     </div>
   </div>
 
   <!-- Events Content -->
   <section class="events-page">
     <div class="container">
-
-      <h2 class="events-page-title">ISC2 Tampa Chapter Events</h2>
 
       {# ── Upcoming Events ── #}
       {% set hasUpcoming = false %}
@@ -26,9 +25,12 @@ layout: base.njk
       {% endfor %}
 
       {% if hasUpcoming %}
+        <span class="section-label" style="display:block;text-align:center;">Coming Up</span>
+        <h2 class="events-page-title">Upcoming Events</h2>
+
         {% for event in events %}
           {% if event.date | isFuture %}
-            <div class="event-card event-card--{{ event.type }}">
+            <div class="event-card event-card--{{ event.type }} animate-on-scroll">
               {# Date badge(s) #}
               <div class="event-date-group">
                 <div class="event-date-badge">
@@ -62,6 +64,9 @@ layout: base.njk
               {# Event details #}
               <div class="event-details">
                 <h3 class="event-title">{{ event.title }}</h3>
+                {% if event.description %}
+                  <p class="event-description">{{ event.description }}</p>
+                {% endif %}
                 <div class="event-meta">
                   <span class="event-meta-pill">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -71,6 +76,9 @@ layout: base.njk
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     {{ event.location }}
                   </span>
+                  {% if event.url %}
+                    <a href="{{ event.url }}" class="event-meta-pill event-meta-link">Details →</a>
+                  {% endif %}
                 </div>
               </div>
             </div>
@@ -87,6 +95,7 @@ layout: base.njk
       {% endfor %}
 
       {% if hasPast %}
+        <span class="section-label" style="display:block;text-align:center;margin-top:48px;">Archive</span>
         <h3 class="events-section-heading">Past Events</h3>
 
         {% for event in events %}
@@ -125,6 +134,9 @@ layout: base.njk
               {# Event details #}
               <div class="event-details">
                 <h3 class="event-title">{{ event.title }}</h3>
+                {% if event.description %}
+                  <p class="event-description">{{ event.description }}</p>
+                {% endif %}
                 <div class="event-meta">
                   <span class="event-meta-pill">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -134,6 +146,9 @@ layout: base.njk
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     {{ event.location }}
                   </span>
+                  {% if event.url %}
+                    <a href="{{ event.url }}" class="event-meta-pill event-meta-link">Details →</a>
+                  {% endif %}
                 </div>
               </div>
             </div>

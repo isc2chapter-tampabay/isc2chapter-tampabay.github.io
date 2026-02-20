@@ -7,6 +7,7 @@
     "endTime": "2:00 PM",
     "location": "Stetson University",
     "type": "chapter",
+    "description": "Kick off 2026 with officer updates, guest presentations, networking lunch, and a second speaking session. Open to members and guests.",
     "url": null
   },
   {
@@ -17,7 +18,8 @@
     "endTime": "5:00 PM",
     "location": "USF Marshall Center",
     "type": "community",
-    "url": null
+    "description": "Tampa Bay's annual community-driven information security conference featuring talks, workshops, CTF competitions, and networking across two full days.",
+    "url": "https://bsidestampa.net"
   },
   {
     "title": "ISC2 2025 Q4 Holiday Party",
@@ -27,6 +29,7 @@
     "endTime": "2:00 PM",
     "location": "Stetson University",
     "type": "holiday",
+    "description": "End-of-year celebration with the chapter community. Food, networking, and a look back at the year's accomplishments.",
     "url": null
   },
   {
@@ -37,6 +40,7 @@
     "endTime": "2:00 PM",
     "location": "Stetson University",
     "type": "chapter",
+    "description": "Officer updates, guest presentations on current cybersecurity topics, networking lunch, and a second speaking session.",
     "url": null
   },
   {
@@ -47,7 +51,8 @@
     "endTime": "10:00 PM",
     "location": "USF Marshall Center",
     "type": "community",
-    "url": null
+    "description": "Two days of community-driven security talks, hands-on workshops, CTF competitions, and networking with Tampa Bay's security community.",
+    "url": "https://bsidestampa.net"
   },
   {
     "title": "Quarterly ISC2 Chapter Meeting (Q1)",
@@ -57,6 +62,7 @@
     "endTime": "2:00 PM",
     "location": "Stetson University",
     "type": "chapter",
+    "description": "Officer updates, guest presentations, networking lunch, and a second speaking session. Open to members and guests.",
     "url": null
   },
   {
@@ -67,6 +73,7 @@
     "endTime": "2:00 PM",
     "location": "Stetson University",
     "type": "chapter",
+    "description": "Officer updates, guest presentations on current cybersecurity topics, networking lunch, and a second speaking session.",
     "url": null
   }
 ]
