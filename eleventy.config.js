@@ -4,6 +4,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
 
+  // Sort events chronologically (earliest first)
+  eleventyConfig.addFilter("sortByDate", (events) => {
+    return [...events].sort((a, b) => a.date.localeCompare(b.date));
+  });
+
   // Date filters for events
   eleventyConfig.addFilter("isFuture", (dateStr) => {
     const today = new Date();

@@ -16,7 +16,7 @@ layout: base.njk
   <section class="events-page">
     <div class="container">
 
-      {# ── Upcoming Events ── #}
+      {# ── Upcoming Events (soonest first) ── #}
       {% set hasUpcoming = false %}
       {% for event in events %}
         {% if event.date | isFuture %}
@@ -28,62 +28,64 @@ layout: base.njk
         <span class="section-label" style="display:block;text-align:center;">Coming Up</span>
         <h2 class="events-page-title">Upcoming Events</h2>
 
-        {% for event in events %}
-          {% if event.date | isFuture %}
-            <div class="event-card event-card--{{ event.type }} animate-on-scroll">
-              {# Date badge(s) #}
-              <div class="event-date-group">
-                <div class="event-date-badge">
-                  <span class="event-date-month">{{ event.date | dateMonth }}</span>
-                  <span class="event-date-day">{{ event.date | dateDay }}</span>
-                  <span class="event-date-dow">{{ event.date | dateDayOfWeek }}</span>
-                </div>
-                {% if event.endDate %}
-                  <span class="event-date-sep">-</span>
+        <div class="upcoming-events">
+          {% for event in events | sortByDate %}
+            {% if event.date | isFuture %}
+              <div class="event-card event-card--{{ event.type }} animate-on-scroll">
+                {# Date badge(s) #}
+                <div class="event-date-group">
                   <div class="event-date-badge">
-                    <span class="event-date-month">{{ event.endDate | dateMonth }}</span>
-                    <span class="event-date-day">{{ event.endDate | dateDay }}</span>
-                    <span class="event-date-dow">{{ event.endDate | dateDayOfWeek }}</span>
+                    <span class="event-date-month">{{ event.date | dateMonth }}</span>
+                    <span class="event-date-day">{{ event.date | dateDay }}</span>
+                    <span class="event-date-dow">{{ event.date | dateDayOfWeek }}</span>
+                  </div>
+                  {% if event.endDate %}
+                    <span class="event-date-sep">-</span>
+                    <div class="event-date-badge">
+                      <span class="event-date-month">{{ event.endDate | dateMonth }}</span>
+                      <span class="event-date-day">{{ event.endDate | dateDay }}</span>
+                      <span class="event-date-dow">{{ event.endDate | dateDayOfWeek }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+
+                {# Event image or fallback badge #}
+                {% if event.image %}
+                  <img class="event-logo-img" src="{{ event.image }}" alt="{{ event.title }}">
+                {% else %}
+                  <div class="event-logo event-logo--{{ event.type }}">
+                    {% if event.type == "community" %}
+                      <span>BSides<br>Tampa</span>
+                    {% else %}
+                      <span>ISC2<br>Chapter</span>
+                    {% endif %}
                   </div>
                 {% endif %}
-              </div>
 
-              {# Event image or fallback badge #}
-              {% if event.image %}
-                <img class="event-logo-img" src="{{ event.image }}" alt="{{ event.title }}">
-              {% else %}
-                <div class="event-logo event-logo--{{ event.type }}">
-                  {% if event.type == "community" %}
-                    <span>BSides<br>Tampa</span>
-                  {% else %}
-                    <span>ISC2<br>Chapter</span>
+                {# Event details #}
+                <div class="event-details">
+                  <h3 class="event-title">{{ event.title }}</h3>
+                  {% if event.description %}
+                    <p class="event-description">{{ event.description }}</p>
                   {% endif %}
-                </div>
-              {% endif %}
-
-              {# Event details #}
-              <div class="event-details">
-                <h3 class="event-title">{{ event.title }}</h3>
-                {% if event.description %}
-                  <p class="event-description">{{ event.description }}</p>
-                {% endif %}
-                <div class="event-meta">
-                  <span class="event-meta-pill">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    {{ event | formatEventTime }}
-                  </span>
-                  <span class="event-meta-pill">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    {{ event.location }}
-                  </span>
-                  {% if event.url %}
-                    <a href="{{ event.url }}" class="event-meta-pill event-meta-link">Details →</a>
-                  {% endif %}
+                  <div class="event-meta">
+                    <span class="event-meta-pill">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                      {{ event | formatEventTime }}
+                    </span>
+                    <span class="event-meta-pill">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      {{ event.location }}
+                    </span>
+                    {% if event.url %}
+                      <a href="{{ event.url }}" class="event-meta-pill event-meta-link">Details →</a>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
-            </div>
-          {% endif %}
-        {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
       {% endif %}
 
       {# ── Past Events ── #}
@@ -98,7 +100,7 @@ layout: base.njk
         <span class="section-label" style="display:block;text-align:center;margin-top:48px;">Archive</span>
         <h3 class="events-section-heading">Past Events</h3>
 
-        {% for event in events %}
+        {% for event in events | sortByDate | reverse %}
           {% if not (event.date | isFuture) %}
             <div class="event-card event-card--{{ event.type }}">
               {# Date badge(s) #}

@@ -785,6 +785,27 @@ a.event-meta-link:hover {
   color: var(--white);
 }
 
+/* Next Up – first upcoming event highlight */
+.upcoming-events .event-card:first-child {
+  position: relative;
+  border-color: #6abf69;
+  box-shadow: 0 0 20px rgba(106, 191, 105, 0.15);
+}
+.upcoming-events .event-card:first-child::before {
+  content: "Next Up";
+  position: absolute;
+  top: -11px;
+  left: 24px;
+  background: #6abf69;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 12px;
+  border-radius: 10px;
+}
+
 /* Events Footer Note */
 .events-footer-note {
   text-align: center;
