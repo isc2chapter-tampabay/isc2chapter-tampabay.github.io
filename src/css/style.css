@@ -171,7 +171,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(160deg, rgba(40, 50, 40, .78), rgba(30, 40, 30, .82)),
+  background: linear-gradient(160deg, rgba(40, 50, 40, .70), rgba(30, 40, 30, .74)),
               url('../images/hero-bg.jpg') center/cover no-repeat;
   color: var(--white);
   text-align: center;
