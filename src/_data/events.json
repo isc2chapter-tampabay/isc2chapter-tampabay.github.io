@@ -1,5 +1,27 @@
 [
   {
+    "title": "Quarterly ISC2 Chapter Meeting (Q4)",
+    "date": "2026-12-05",
+    "endDate": null,
+    "startTime": "10:00 AM",
+    "endTime": "2:00 PM",
+    "location": "Stetson Tampa Law Center, 1700 North Tampa Street, Tampa, FL 33602",
+    "type": "chapter",
+    "description": "Officer updates, guest presentations on current cybersecurity topics, networking lunch, and a second speaking session. Open to members and guests.",
+    "url": null
+  },
+  {
+    "title": "Quarterly ISC2 Chapter Meeting (Q3)",
+    "date": "2026-09-12",
+    "endDate": null,
+    "startTime": "10:00 AM",
+    "endTime": "2:00 PM",
+    "location": "Stetson Tampa Law Center, 1700 North Tampa Street, Tampa, FL 33602",
+    "type": "chapter",
+    "description": "Officer updates, guest presentations on current cybersecurity topics, networking lunch, and a second speaking session. Open to members and guests.",
+    "url": null
+  },
+  {
     "title": "Quarterly ISC2 Chapter Meeting (Q1)",
     "date": "2026-03-07",
     "endDate": null,
