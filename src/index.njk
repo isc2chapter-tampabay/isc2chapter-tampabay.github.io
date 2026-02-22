@@ -98,7 +98,7 @@ layout: base.njk
       <span class="section-label" style="text-align:center;display:block;">Coming Up</span>
       <h2>Upcoming Events</h2>
       {% set eventCount = 0 %}
-      {% for event in events %}
+      {% for event in events | sortByDate %}
         {% if event.date | isFuture and eventCount < 2 %}
           {% set eventCount = eventCount + 1 %}
           <div class="upcoming-card animate-on-scroll">
