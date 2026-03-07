@@ -29,7 +29,7 @@
     "endTime": "5:00 PM",
     "location": "USF Marshall Center",
     "type": "community",
-    "description": "\"Unlucky 13\" — tempt fate at the 13th annual BSides Tampa. Friday features low-cost training courses and early check-in; Saturday is the main event with talks, workshops, CTF competitions, and networking with Tampa Bay's security community. Two $500 student scholarships available — apply by April 1!",
+    "description": "\"Unlucky 13.\" Tempt fate at the 13th annual BSides Tampa. Friday features low-cost training courses and early check-in; Saturday is the main event with talks, workshops, CTF competitions, and networking with Tampa Bay's security community. Two $500 student scholarships available. Apply by April 1!",
     "url": "https://bsidestampa.net"
   },
   {
@@ -51,7 +51,7 @@
     "endTime": "2:00 PM",
     "location": "Stetson University",
     "type": "holiday",
-    "description": "End-of-year celebration with the chapter community. Food, networking, and a look back at the year's accomplishments.",
+    "description": "End-of-year get-together. Food, drinks, and a look back at what we pulled off in 2025.",
     "url": null
   },
   {
@@ -73,7 +73,7 @@
     "endTime": "10:00 PM",
     "location": "USF Marshall Center",
     "type": "community",
-    "description": "Two days of community-driven security talks, hands-on workshops, CTF competitions, and networking with Tampa Bay's security community.",
+    "description": "Two days of security talks, workshops, CTF, and a good crowd. If you missed it, you missed it.",
     "url": "https://bsidestampa.net"
   },
   {
