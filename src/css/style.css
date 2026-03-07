@@ -99,6 +99,31 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--white);
 }
 
+/* ---------- Announcement Bar ---------- */
+.announcement-bar {
+  background: linear-gradient(135deg, #1a2e17, #2d4a26);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: .85rem;
+  position: relative;
+  z-index: 101;
+}
+.announcement-bar a {
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity var(--transition-fast);
+}
+.announcement-bar a:hover { opacity: .85; color: var(--white); }
+.announcement-bar svg { width: 16px; height: 16px; flex-shrink: 0; }
+.announcement-arrow {
+  font-weight: 700;
+  transition: transform var(--transition-fast);
+}
+.announcement-bar a:hover .announcement-arrow { transform: translateX(3px); }
+
 /* ---------- Header / Nav ---------- */
 .site-header {
   background: rgba(255,255,255,0.88);
@@ -164,6 +189,35 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 14px rgba(84,128,75,0.3);
 }
 .nav-cta::after { display: none; }
+
+/* Scholarship nav highlight */
+.main-nav a.nav-scholarship {
+  color: #b8860b;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(255,214,102,0.15), rgba(218,165,32,0.1));
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+.main-nav a.nav-scholarship::after {
+  background: linear-gradient(135deg, #daa520, #ffd666);
+  transform: scaleX(1);
+  opacity: .7;
+}
+.main-nav a.nav-scholarship::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  animation: navShimmer 3s ease-in-out infinite;
+}
+@keyframes navShimmer {
+  0%, 100% { left: -100%; }
+  50% { left: 150%; }
+}
 
 /* Mobile nav toggle */
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
@@ -1091,6 +1145,87 @@ a.event-meta-link:hover {
   background-repeat: no-repeat;
 }
 
+/* ---------- Scholarship Highlights ---------- */
+.scholarship-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0 0;
+}
+.scholarship-highlight-card {
+  text-align: center;
+  background: var(--green-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  border: 2px solid transparent;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-normal);
+}
+.scholarship-highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green);
+}
+.scholarship-highlight-number {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1.2;
+}
+.scholarship-highlight-label {
+  font-size: .85rem;
+  color: var(--muted-text);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ---------- Scholarship Callout (homepage) ---------- */
+.scholarship-callout {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--green-light) 100%);
+}
+.scholarship-callout-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.scholarship-callout-text h2 {
+  font-size: 2.2rem;
+  color: var(--dark);
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.scholarship-callout-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--muted-text);
+  margin-bottom: 24px;
+}
+.scholarship-callout-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ---------- Scholarship Event Pill ---------- */
+a.event-meta-scholarship {
+  background: #ffd666;
+  color: #1a1a1a;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+a.event-meta-scholarship:hover {
+  background: #f5c542;
+  color: #1a1a1a;
+}
+a.event-meta-scholarship svg {
+  stroke: #1a1a1a;
+}
+
 /* ---------- CTA Banner ---------- */
 .cta-banner {
   background: linear-gradient(135deg, var(--green) 0%, var(--green-hover) 50%, var(--dark-green) 100%);
@@ -1213,6 +1348,16 @@ a.event-meta-link:hover {
   /* Page headers */
   .page-header { padding: 48px 20px 40px; }
   .page-header h1 { font-size: 2rem; }
+
+  /* Announcement bar */
+  .announcement-bar { font-size: .78rem; padding: 8px 16px; }
+  .announcement-bar strong { display: block; }
+
+  /* Scholarships */
+  .scholarship-highlights { grid-template-columns: 1fr; max-width: 320px; margin-left: auto; margin-right: auto; }
+  .scholarship-callout-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .scholarship-callout-stats { max-width: 320px; margin: 0 auto; }
+  .scholarship-callout-text .btn { width: 100%; text-align: center; }
 
   /* Form wrapper */
   .form-wrapper { padding: 20px; }

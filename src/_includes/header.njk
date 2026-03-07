@@ -1,3 +1,14 @@
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <a href="/scholarships/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <strong>BSides Tampa 2026 Scholarships</strong> — Two $500 awards for cybersecurity students. Apply by April 1!
+        <span class="announcement-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="site-header">
     <div class="container">
@@ -10,7 +21,7 @@
         </button>
         <ul>
           {%- for item in navigation %}
-          <li><a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.label }}</a></li>
+          <li><a href="{{ item.url }}"{% if item.url === "/scholarships/" %} class="nav-scholarship{% if page.url === item.url %} active{% endif %}"{% elif page.url === item.url %} class="active"{% endif %}>{{ item.label }}</a></li>
           {%- endfor %}
         </ul>
         <a href="/membership/" class="nav-cta">Become a Member</a>
