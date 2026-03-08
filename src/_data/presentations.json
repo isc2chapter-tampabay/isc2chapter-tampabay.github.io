@@ -8,7 +8,7 @@
     "description": "The presentation argues that traditional reactive security is insufficient against emerging quantum computing threats, particularly \"Harvest Now, Decrypt Later\" attacks, and proposes a unified framework combining quantum-aware threat modeling, ML-driven predictive analytics, and automated adaptive defense to build a continuously learning security posture that can survive the cryptographic transition ahead.",
     "slides": "https://docs.google.com/presentation/d/16ufXSQo7SbDvBU6_PnOcBVW8hA1YnnVz/edit?usp=sharing&ouid=101030355156182792261&rtpof=true&sd=true",
     "video": null,
-    "image": null,
+    "image": "/resources/headshots/MrunalGangrade.jpg",
     "tags": ["cryptography","quantum"]
   },
   {
@@ -20,7 +20,7 @@
     "description": "This session breaks down what LLM Abliteration is, shows how to do it with open source tools, and includes a live demo comparing real outcomes. You'll learn how to run unrestricted models locally and leave with practical ideas on how these techniques can be used for meaningful security research and education.",
     "slides": "https://docs.google.com/presentation/d/1cxLcaMNQxD4UjhR_56vWkkcd5vi9x_gl/",
     "video": null,
-    "image": null,
+    "image": "/resources/headshots/JoshuaGrose.jpg",
     "tags": ["AI/ML", "red team","offensive security"]
   },
     {
