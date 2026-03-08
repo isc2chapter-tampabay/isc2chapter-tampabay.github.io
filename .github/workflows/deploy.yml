@@ -22,9 +22,7 @@ jobs:
       - run: npx @11ty/eleventy
         env:
           API_URL: https://isc2-tampa-bay-chapter.pages.dev
-      - uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: e0380f7fca0e9fecb7b9817fd5258ec9
-          wranglerVersion: '3'
-          command: pages deploy _site --project-name=isc2-tampa-bay-chapter
+      - run: npx wrangler@3 pages deploy _site --project-name=isc2-tampa-bay-chapter
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: e0380f7fca0e9fecb7b9817fd5258ec9
