@@ -31,6 +31,8 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    window.__scrollObserver = observer;
   </script>
+  <script src="/js/dynamic.js"></script>
 </body>
 </html>
