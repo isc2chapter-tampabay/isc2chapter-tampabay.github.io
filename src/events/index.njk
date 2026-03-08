@@ -108,7 +108,7 @@ layout: base.njk
 
         {% for event in events | sortByDate | reverse %}
           {% if not (event.date | isFuture) %}
-            <div class="event-card event-card--{{ event.type }}">
+            <div class="event-card event-card--{{ event.type }} event-card--past">
               {# Date badge(s) #}
               <div class="event-date-group">
                 <div class="event-date-badge">

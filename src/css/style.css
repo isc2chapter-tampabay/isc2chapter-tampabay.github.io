@@ -703,6 +703,12 @@ img { max-width: 100%; height: auto; display: block; }
   background: #4a1c1c;
   border: 2px solid #8b6b3c;
 }
+.event-card--past {
+  opacity: 0.55;
+}
+.event-card--past:hover {
+  opacity: 0.85;
+}
 
 /* Date Badge Group */
 .event-date-group {

@@ -105,6 +105,7 @@
     const card = document.createElement('div');
     card.className = 'event-card event-card--' + (ev.type || 'chapter');
     if (isUpcoming) card.classList.add('animate-on-scroll');
+    if (!isUpcoming) card.classList.add('event-card--past');
 
     // Date group
     const dateGroup = el('div', { class: 'event-date-group' });
