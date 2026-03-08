@@ -26,4 +26,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: e0380f7fca0e9fecb7b9817fd5258ec9
+          wranglerVersion: '3'
           command: pages deploy _site --project-name=isc2-tampa-bay-chapter
