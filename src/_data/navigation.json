@@ -5,5 +5,6 @@
   { "label": "Sponsorship", "url": "/sponsorship/" },
   { "label": "Volunteer", "url": "/volunteer/" },
   { "label": "Speak", "url": "/cfp/" },
+  { "label": "Resources", "url": "/resources/" },
   { "label": "Scholarships", "url": "/scholarships/" }
 ]

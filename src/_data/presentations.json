@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Threat Modeling and Predictive Analytics in the Age of Quantum Computing",
+    "speaker": "Mrunal Gangrade",
+    "linkedin": "https://www.linkedin.com/in/mrunal-gangrade-8087121b5/",
+    "date": "2026-03-07",
+    "event": "Q1 2026 Chapter Meeting",
+    "description": "The presentation argues that traditional reactive security is insufficient against emerging quantum computing threats, particularly \"Harvest Now, Decrypt Later\" attacks, and proposes a unified framework combining quantum-aware threat modeling, ML-driven predictive analytics, and automated adaptive defense to build a continuously learning security posture that can survive the cryptographic transition ahead.",
+    "slides": "https://docs.google.com/presentation/d/16ufXSQo7SbDvBU6_PnOcBVW8hA1YnnVz/edit?usp=sharing&ouid=101030355156182792261&rtpof=true&sd=true",
+    "video": null,
+    "image": null,
+    "tags": ["cryptography","quantum"]
+  },
+  {
+    "title": "LLM Abliteration 101: Hands-On Unrestricted AI, Local Models",
+    "speaker": "Joshua Grose",
+    "linkedin": "https://www.linkedin.com/in/joshuagrose/",
+    "date": "2026-03-07",
+    "event": "Q1 2026 Chapter Meeting",
+    "description": "This session breaks down what LLM Abliteration is, shows how to do it with open source tools, and includes a live demo comparing real outcomes. You'll learn how to run unrestricted models locally and leave with practical ideas on how these techniques can be used for meaningful security research and education.",
+    "slides": "https://docs.google.com/presentation/d/1cxLcaMNQxD4UjhR_56vWkkcd5vi9x_gl/",
+    "video": null,
+    "image": null,
+    "tags": ["AI/ML", "red team","offensive security"]
+  },
+    {
+    "title": "Q1 Tampa Chapter Updates",
+    "speaker": "",
+    "date": "2026-03-07",
+    "event": "Q1 2026 Chapter Meeting",
+    "description": "Q1 Tampa Chapter Update Presentation by chapter leadership",
+    "slides": "https://docs.google.com/presentation/d/1oDhOX5_sW8kXJ2_zDYui3KAkxtiqtZfCqG797qiYtZQ/",
+    "video": null,
+    "image": null,
+    "tags": ["AI/ML", "red team","offensive security"]
+  }
+]

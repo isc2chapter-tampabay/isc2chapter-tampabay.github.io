@@ -3,6 +3,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/files");
+  eleventyConfig.addPassthroughCopy("src/resources/slides");
+  eleventyConfig.addPassthroughCopy("src/resources/headshots");
 
   // Sort events chronologically (earliest first)
   eleventyConfig.addFilter("sortByDate", (events) => {
@@ -34,6 +37,21 @@ module.exports = function (eleventyConfig) {
     const parts = dateStr.split("-");
     const date = new Date(parts[0], parts[1] - 1, parts[2]);
     return days[date.getDay()];
+  });
+
+  eleventyConfig.addFilter("dateYear", (dateStr) => {
+    return dateStr.split("-")[0];
+  });
+
+  eleventyConfig.addFilter("uniqueYears", (items) => {
+    const years = [...new Set(items.map(item => item.date.split("-")[0]))];
+    return years.sort().reverse();
+  });
+
+  eleventyConfig.addFilter("dateFormatLong", (dateStr) => {
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const parts = dateStr.split("-");
+    return `${months[parseInt(parts[1]) - 1]} ${parseInt(parts[2])}, ${parts[0]}`;
   });
 
   eleventyConfig.addFilter("formatEventTime", (event) => {

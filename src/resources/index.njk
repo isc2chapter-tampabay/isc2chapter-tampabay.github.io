@@ -1,0 +1,91 @@
+---
+title: "Resources"
+description: "Slides, recordings, and materials from ISC2 Tampa Bay Chapter meetings and presentations."
+layout: base.njk
+---
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Resources</h1>
+      <p class="page-header-subtitle">Slides, recordings, and materials from past meetings.</p>
+    </div>
+  </div>
+
+  <!-- Presentations Archive -->
+  <section class="content-section">
+    <div class="container">
+      <span class="section-label">Presentations</span>
+      <h2>Meeting Presentations</h2>
+      <p>Decks and recordings from our quarterly chapter meetings and other events. Have a deck to share? <a href="/cfp/">Submit a talk</a>.</p>
+
+      {% for year in presentations | uniqueYears %}
+        <h3 class="resource-year-heading">{{ year }}</h3>
+        <div class="resource-grid">
+          {% for pres in presentations | sort(true, false, "date") %}
+            {% if (pres.date | dateYear) == year %}
+              <div class="resource-card animate-on-scroll">
+                {% if pres.image %}
+                  <div class="resource-card-photo">
+                    <img src="{{ pres.image }}" alt="{{ pres.speaker }}">
+                  </div>
+                {% endif %}
+                <div class="resource-card-body">
+                  <h4 class="resource-card-title">{{ pres.title }}</h4>
+                  <p class="resource-card-meta">
+                    <span class="resource-speaker">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                      {% if pres.linkedin %}<a href="{{ pres.linkedin }}" target="_blank" rel="noopener">{{ pres.speaker }}</a>{% else %}{{ pres.speaker }}{% endif %}
+                    </span>
+                    <span class="resource-date">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                      {{ pres.date | dateFormatLong }}
+                    </span>
+                  </p>
+                  <p class="resource-card-event">{{ pres.event }}</p>
+                  {% if pres.description %}
+                    <p class="resource-card-desc">{{ pres.description }}</p>
+                  {% endif %}
+                  {% if pres.tags and pres.tags.length %}
+                    <div class="resource-tags">
+                      {% for tag in pres.tags %}
+                        <span class="resource-tag">{{ tag }}</span>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+                {% if pres.slides or pres.video %}
+                  <div class="resource-card-actions">
+                    {% if pres.slides %}
+                      <a href="{{ pres.slides }}" class="resource-action" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM6 20V4h5v7h7v9H6z"/></svg>
+                        Slides
+                      </a>
+                    {% endif %}
+                    {% if pres.video %}
+                      <a href="{{ pres.video }}" class="resource-action" target="_blank" rel="noopener">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        Recording
+                      </a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Want to present?</h2>
+      <p class="cta-subtitle">We're always looking for speakers. First-timers welcome.</p>
+      <div class="cta-banner-actions">
+        <a href="/cfp/" class="btn">Submit a Talk</a>
+        <a href="/events/" class="btn-outline btn-outline--light">View Events</a>
+      </div>
+    </div>
+  </section>

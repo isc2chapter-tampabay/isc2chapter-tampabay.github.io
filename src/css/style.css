@@ -1260,6 +1260,111 @@ a.event-meta-scholarship svg {
   box-shadow: 0 6px 20px rgba(255,255,255,0.25);
 }
 
+/* ---------- Resources / Presentations ---------- */
+.resource-year-heading {
+  font-size: 1.4rem;
+  color: var(--dark);
+  margin: 40px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--green);
+  display: inline-block;
+}
+.resource-year-heading:first-of-type { margin-top: 24px; }
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 16px;
+}
+.resource-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.resource-card-photo {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  margin-bottom: 12px;
+}
+.resource-card-photo img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter var(--transition-normal);
+}
+.resource-card:hover .resource-card-photo img {
+  filter: grayscale(0%);
+}
+.resource-card-title {
+  color: var(--dark);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.resource-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: .85rem;
+  color: var(--muted-text);
+  margin-bottom: 6px;
+}
+.resource-card-meta span { display: inline-flex; align-items: center; gap: 5px; }
+.resource-card-meta svg { opacity: .6; }
+.resource-card-event {
+  font-size: .8rem;
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.resource-card-desc {
+  font-size: .88rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.resource-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.resource-tag {
+  background: var(--green-light);
+  color: var(--green);
+  font-size: .72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.resource-card-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.resource-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.resource-action:hover { color: var(--green-hover); }
+.resource-action svg { opacity: .7; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .nav-toggle { display: block; }
@@ -1321,6 +1426,7 @@ a.event-meta-scholarship svg {
 
   /* Volunteer */
   .volunteer-grid { grid-template-columns: 1fr; }
+  .resource-grid { grid-template-columns: 1fr; }
 
   /* Upcoming Events */
   .upcoming-card { flex-direction: column; text-align: center; }
