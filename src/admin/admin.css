@@ -50,6 +50,24 @@ body {
   text-decoration: none;
   font-size: 13px;
 }
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.btn-publish {
+  padding: 7px 16px;
+  background: #2563eb;
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-publish:hover { background: #1d4ed8; }
+.btn-publish:disabled { opacity: 0.6; cursor: not-allowed; }
 .admin-link:hover { color: var(--white); }
 
 /* Layout */

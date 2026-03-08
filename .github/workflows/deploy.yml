@@ -22,6 +22,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx @11ty/eleventy
+        env:
+          API_URL: ${{ secrets.API_URL }}
       - name: Check for broken internal links
         run: npx --yes linkinator ./_site --recurse --skip "^(?!file://).*" --verbosity error
       - name: Deploy to Cloudflare Pages

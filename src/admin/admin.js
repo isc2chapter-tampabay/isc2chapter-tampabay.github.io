@@ -395,6 +395,25 @@ async function uploadFile(input, prefix, targetInput, previewContainer) {
   }
 }
 
+// ── Publish ──
+async function publishSite() {
+  const btn = document.getElementById('publish-btn');
+  if (!confirm('Rebuild and publish the live site with your latest changes?')) return;
+  btn.disabled = true;
+  btn.textContent = 'Publishing...';
+  try {
+    const res = await fetch(`${API}/rebuild`, { method: 'POST' });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Rebuild failed');
+    toast('Site rebuild triggered. Changes will be live in about 30 seconds.');
+  } catch (err) {
+    toast(err.message || 'Failed to trigger rebuild', true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Publish Site';
+  }
+}
+
 // ── Tags ──
 function makeTagPill(text) {
   const removeBtn = el('button', { type: 'button' }, '\u00d7');
