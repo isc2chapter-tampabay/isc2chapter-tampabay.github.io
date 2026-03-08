@@ -1,0 +1,12 @@
+name = "isc2-tampa-bay-chapter"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "_site"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "isc2-tampa-db"
+database_id = "d9d607d8-4ce5-4ea5-9693-9bad162791ac"
+
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "isc2-tampa-uploads"

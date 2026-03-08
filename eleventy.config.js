@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/files");
   eleventyConfig.addPassthroughCopy("src/resources/slides");
   eleventyConfig.addPassthroughCopy("src/resources/headshots");
+  eleventyConfig.addPassthroughCopy("src/admin");
 
   // Sort events chronologically (earliest first)
   eleventyConfig.addFilter("sortByDate", (events) => {
