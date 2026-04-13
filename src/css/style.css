@@ -193,11 +193,11 @@ img { max-width: 100%; height: auto; display: block; }
 /* Dropdown submenus (click-to-open, accordion on mobile) */
 .main-nav .has-dropdown { position: relative; }
 
-/* Toggle button styled to match .main-nav a */
+/* Toggle button styled to match .main-nav a exactly */
 .main-nav .dropdown-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
   background: none;
   border: none;
   margin: 0;
@@ -205,9 +205,10 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: inherit;
   font-size: .95rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: inherit;
   color: var(--dark);
   padding: 8px 16px;
+  text-align: left;
   position: relative;
   transition: color var(--transition-normal);
 }
@@ -238,6 +239,9 @@ img { max-width: 100%; height: auto; display: block; }
   transform: scaleX(1);
 }
 .main-nav .dropdown-caret {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
   fill: currentColor;
   transition: transform var(--transition-fast);
 }
@@ -1657,8 +1661,10 @@ a.event-meta-link:hover {
   /* Dropdown toggle fills the row like a nav link on mobile */
   .main-nav .has-dropdown { width: 100%; }
   .main-nav .dropdown-toggle {
-    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    width: 100%;
     padding: 12px 20px;
   }
   .main-nav .dropdown-toggle::after { display: none; }
