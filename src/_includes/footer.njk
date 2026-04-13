@@ -32,10 +32,10 @@
           </div>
           <h3>Email Announcements</h3>
           <p>Occasional meeting reminders, BSides Tampa news, and scholarship deadlines — straight to your inbox.</p>
-          <form class="subscribe-form" id="subscribeForm" novalidate>
-            <label for="subscribeEmail" class="sr-only">Email address</label>
+          <form class="subscribe-form" data-source="website" novalidate>
+            <label for="footerSubscribeEmail" class="sr-only">Email address</label>
             <div class="subscribe-form-row">
-              <input type="email" id="subscribeEmail" name="email" placeholder="your@email.com" autocomplete="email" required>
+              <input type="email" id="footerSubscribeEmail" name="email" placeholder="your@email.com" autocomplete="email" required>
               <button type="submit" class="btn subscribe-submit">Subscribe</button>
             </div>
             <div class="cf-turnstile" data-sitekey="{{ site.turnstile.siteKey }}" data-size="flexible"></div>

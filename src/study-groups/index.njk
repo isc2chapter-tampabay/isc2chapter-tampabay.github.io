@@ -47,20 +47,25 @@ layout: base.njk
     </div>
   </section>
 
-  <!-- How to join or lead -->
-  <section class="content-section" style="background: var(--light-gray);">
+  <!-- Sign up form -->
+  <section class="content-section" id="signup" style="background: var(--light-gray);">
     <div class="container">
       <span class="section-label">Sign up</span>
-      <h2>Join a group — or start one</h2>
-      <p>Email us and tell us which cert you're preparing for, or whether you'd like to lead a group.</p>
+      <h2>Tell us you're interested</h2>
+      <p>Drop your email and we'll reach out when a group forms. Already a subscriber? You'll still get the study-group tag applied so we know to include you.</p>
 
-      <div class="callout">
-        <p style="margin:0 0 8px;"><strong>Email:</strong> <a href="mailto:membership@isc2chapter-tampabay.org?subject=Study%20Group">membership@isc2chapter-tampabay.org</a></p>
-        <p style="margin:0;"><strong>Subject line:</strong> Study Group</p>
-      </div>
+      <form class="subscribe-form study-group-form" data-source="study-groups" novalidate>
+        <label for="studyGroupEmail" class="sr-only">Email address</label>
+        <div class="subscribe-form-row">
+          <input type="email" id="studyGroupEmail" name="email" placeholder="your@email.com" autocomplete="email" required>
+          <button type="submit" class="btn subscribe-submit">Sign Me Up</button>
+        </div>
+        <div class="cf-turnstile" data-sitekey="{{ site.turnstile.siteKey }}"></div>
+        <p class="subscribe-feedback" role="status" aria-live="polite"></p>
+      </form>
 
-      <div class="callout" style="margin-top: 16px;">
-        <p style="margin:0;"><strong>Already certified?</strong> We could use experienced CISSPs and CCSPs as group leaders and occasional guest coaches. Helps us. Counts as Group A CPEs for you.</p>
+      <div class="callout" style="margin-top: 24px;">
+        <p style="margin:0;"><strong>Already certified?</strong> We could use experienced CISSPs and CCSPs as group leaders and occasional guest coaches. Email <a href="mailto:membership@isc2chapter-tampabay.org?subject=Study%20Group%20Leader">membership@isc2chapter-tampabay.org</a> with subject "Study Group Leader" — helps us, counts as Group A CPEs for you.</p>
       </div>
     </div>
   </section>
@@ -69,9 +74,9 @@ layout: base.njk
   <section class="cta-banner">
     <div class="container">
       <h2>Ready to start studying together?</h2>
-      <p class="cta-subtitle">Pick the cert, send us an email, and we'll get a group going.</p>
+      <p class="cta-subtitle">Sign up above and we'll be in touch when a group forms around your cert.</p>
       <div class="cta-banner-actions">
-        <a href="mailto:membership@isc2chapter-tampabay.org?subject=Study%20Group" class="btn">Email to Join</a>
+        <a href="#signup" class="btn">Sign Up</a>
         <a href="/cpe/" class="btn-outline btn-outline--light">See CPE Info</a>
       </div>
     </div>

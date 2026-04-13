@@ -694,6 +694,12 @@ a.feature-card, .feature-card--link {
 .subscribe-feedback--error { color: #b91c1c; }
 .subscribe-feedback--success { color: var(--green); }
 
+/* Full-page signup form (used on /study-groups/) */
+.study-group-form {
+  max-width: 520px;
+  margin-top: 24px;
+}
+
 /* Screen-reader-only utility */
 .sr-only {
   position: absolute;
