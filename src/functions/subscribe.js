@@ -16,11 +16,11 @@
 const SOURCES = {
   "website": {
     tags: ["website-signup"],
-    message: "Almost done — check your inbox to confirm your subscription.",
+    message: "Check your inbox for a confirmation link.",
   },
   "study-groups": {
     tags: ["isc2-study-group"],
-    message: "Got it — check your inbox to confirm, and we'll reach out when a group forms.",
+    message: "Check your inbox for the confirmation link. We'll ping you when a group forms.",
   },
 };
 
