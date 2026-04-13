@@ -190,39 +190,79 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nav-cta::after { display: none; }
 
-/* Dropdown submenus */
+/* Dropdown submenus (click-to-open, accordion on mobile) */
 .main-nav .has-dropdown { position: relative; }
-.main-nav .dropdown-caret {
-  font-size: .7em;
-  opacity: .7;
-  margin-left: 2px;
-  transition: transform var(--transition-fast);
-  display: inline-block;
+
+/* Toggle button styled to match .main-nav a */
+.main-nav .dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--dark);
+  padding: 8px 16px;
+  position: relative;
+  transition: color var(--transition-normal);
 }
-.main-nav .has-dropdown:hover > a .dropdown-caret,
-.main-nav .has-dropdown:focus-within > a .dropdown-caret {
+.main-nav .dropdown-toggle:focus { outline: none; }
+.main-nav .dropdown-toggle:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.main-nav .dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: var(--green);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+  transform-origin: center;
+}
+.main-nav .dropdown-toggle:hover,
+.main-nav .has-dropdown.is-open > .dropdown-toggle {
+  color: var(--green);
+}
+.main-nav .dropdown-toggle:hover::after,
+.main-nav .has-dropdown.is-open > .dropdown-toggle::after {
+  transform: scaleX(1);
+}
+.main-nav .dropdown-caret {
+  fill: currentColor;
+  transition: transform var(--transition-fast);
+}
+.main-nav .has-dropdown.is-open > .dropdown-toggle .dropdown-caret {
   transform: rotate(-180deg);
 }
+
+/* Dropdown panel — hidden by default, shown when .is-open */
 .main-nav .dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   left: 0;
-  min-width: 220px;
+  min-width: 240px;
   display: flex;
   flex-direction: column;
   background: var(--white);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
   padding: 8px 0;
   margin: 0;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
   z-index: 110;
 }
-.main-nav .has-dropdown:hover > .dropdown,
-.main-nav .has-dropdown:focus-within > .dropdown {
+.main-nav .has-dropdown.is-open > .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -243,6 +283,7 @@ img { max-width: 100%; height: auto; display: block; }
 .main-nav .dropdown a.active {
   color: var(--green);
   background: var(--light-gray);
+  font-weight: 600;
 }
 
 /* Mobile nav toggle */
@@ -1611,18 +1652,32 @@ a.event-meta-link:hover {
   .main-nav.open ul { display: flex; }
   .main-nav a { padding: 12px 20px; }
 
-  /* Dropdowns flatten inline on mobile */
+  /* Dropdown toggle fills the row like a nav link on mobile */
+  .main-nav .has-dropdown { width: 100%; }
+  .main-nav .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+  .main-nav .dropdown-toggle::after { display: none; }
+
+  /* Dropdown becomes an inline accordion — hidden until .is-open */
   .main-nav .dropdown {
     position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
     box-shadow: none;
     background: transparent;
     border-radius: 0;
     padding: 0;
     margin: 0;
     min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: none;
+    transition: max-height var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+  }
+  .main-nav .has-dropdown.is-open > .dropdown {
+    max-height: 500px;
+    padding: 4px 0 8px;
   }
   .main-nav .dropdown a {
     padding: 10px 20px 10px 40px;
@@ -1633,8 +1688,8 @@ a.event-meta-link:hover {
   .main-nav .dropdown a:hover,
   .main-nav .dropdown a.active {
     background: transparent;
+    color: var(--green);
   }
-  .main-nav .dropdown-caret { display: none; }
   .nav-cta {
     display: block;
     text-align: center;

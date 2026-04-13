@@ -21,16 +21,23 @@
         </button>
         <ul>
           {%- for item in navigation %}
-          <li{% if item.children %} class="has-dropdown"{% endif %}>
-            <a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.label }}{% if item.children %} <span class="dropdown-caret" aria-hidden="true">▾</span>{% endif %}</a>
-            {% if item.children %}
+          {% if item.children %}
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">
+              {{ item.label }}
+              <svg class="dropdown-caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
             <ul class="dropdown">
               {%- for child in item.children %}
               <li><a href="{{ child.url }}"{% if page.url === child.url %} class="active"{% endif %}>{{ child.label }}</a></li>
               {%- endfor %}
             </ul>
-            {% endif %}
           </li>
+          {% else %}
+          <li>
+            <a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.label }}</a>
+          </li>
+          {% endif %}
           {%- endfor %}
         </ul>
         <a href="/membership/" class="nav-cta">Become a Member</a>
@@ -39,10 +46,59 @@
   </header>
 
   <script>
-    // Close mobile menu when a nav link is tapped
-    document.querySelectorAll('.main-nav a:not(.nav-toggle)').forEach(function(link) {
-      link.addEventListener('click', function() {
-        document.getElementById('mainNav').classList.remove('open');
+    (function () {
+      var mainNav = document.getElementById('mainNav');
+
+      // Close mobile menu when a nav link is tapped
+      document.querySelectorAll('.main-nav a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mainNav.classList.remove('open');
+          closeAllDropdowns();
+        });
       });
-    });
+
+      // Dropdown submenus: click/tap only
+      var parents = document.querySelectorAll('.main-nav .has-dropdown');
+
+      function closeAllDropdowns(except) {
+        parents.forEach(function (p) {
+          if (p === except) return;
+          p.classList.remove('is-open');
+          var btn = p.querySelector('.dropdown-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      parents.forEach(function (parent) {
+        var btn = parent.querySelector('.dropdown-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var willOpen = !parent.classList.contains('is-open');
+          closeAllDropdowns(willOpen ? parent : null);
+          parent.classList.toggle('is-open', willOpen);
+          btn.setAttribute('aria-expanded', String(willOpen));
+        });
+      });
+
+      // Click outside closes any open dropdown
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.main-nav .has-dropdown')) closeAllDropdowns();
+      });
+
+      // Escape closes and returns focus to the toggle
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        parents.forEach(function (p) {
+          if (!p.classList.contains('is-open')) return;
+          p.classList.remove('is-open');
+          var btn = p.querySelector('.dropdown-toggle');
+          if (btn) {
+            btn.setAttribute('aria-expanded', 'false');
+            btn.focus();
+          }
+        });
+      });
+    })();
   </script>
