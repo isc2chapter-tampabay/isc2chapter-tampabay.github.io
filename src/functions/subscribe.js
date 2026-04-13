@@ -1,4 +1,4 @@
-// Cloudflare Pages Function: POST /api/subscribe
+// Cloudflare Pages Function: POST /subscribe
 // Validates email, verifies Turnstile, adds subscriber to Mailchimp with
 // status="pending" (triggers Mailchimp's double opt-in confirmation email),
 // then tags them based on the form's "source" — whether they were newly added

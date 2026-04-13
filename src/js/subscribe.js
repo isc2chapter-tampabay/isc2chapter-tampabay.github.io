@@ -1,6 +1,6 @@
 // Generic handler for email-signup forms on the site.
 // Each form carries a data-source attribute ("website", "study-groups", etc.)
-// that the /api/subscribe function uses to decide which Mailchimp tags to apply.
+// that the /subscribe function uses to decide which Mailchimp tags to apply.
 
 (function () {
   document.querySelectorAll(".subscribe-form").forEach(initForm);
@@ -31,7 +31,7 @@
       setFeedback("Submitting…", "");
 
       try {
-        const res = await fetch("/api/subscribe", {
+        const res = await fetch("/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, turnstileToken, source }),
