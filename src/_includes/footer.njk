@@ -1,10 +1,50 @@
-  <!-- Pre-footer CTA -->
-  <div class="footer-cta">
+  <!-- Stay Connected -->
+  <section class="stay-connected">
     <div class="container">
-      <p>Follow us for chapter updates and event announcements.</p>
-      <a href="{{ site.social.linkedin }}" class="btn-outline btn-outline--light">Follow on LinkedIn →</a>
+      <div class="section-heading">
+        <span class="section-label">Stay Connected</span>
+        <h2>Three ways to keep up</h2>
+        <p class="section-intro section-intro--centered">Between quarterly meetings, most of what we do happens on three channels. Pick whichever fits how you keep up.</p>
+      </div>
+      <div class="features">
+        <a href="{{ site.social.linkedin }}" class="feature-card feature-card--link feature-card--primary animate-on-scroll">
+          <span class="primary-badge">Primary</span>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </div>
+          <h3>LinkedIn</h3>
+          <p>Chapter updates, event announcements, and news post regularly here.</p>
+          <span class="feature-card-cta">Follow on LinkedIn →</span>
+        </a>
+
+        <a href="https://discord.com/invite/kr6ZMTv8tg" class="feature-card feature-card--link animate-on-scroll">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.029zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+          </div>
+          <h3>Discord</h3>
+          <p>Day-to-day chat: questions, job shares, event planning.</p>
+          <span class="feature-card-cta">Join the Discord →</span>
+        </a>
+
+        <div class="feature-card feature-card--form animate-on-scroll">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <h3>Email Announcements</h3>
+          <p>Occasional meeting reminders, BSides Tampa news, and scholarship deadlines — straight to your inbox.</p>
+          <form class="subscribe-form" id="subscribeForm" novalidate>
+            <label for="subscribeEmail" class="sr-only">Email address</label>
+            <div class="subscribe-form-row">
+              <input type="email" id="subscribeEmail" name="email" placeholder="your@email.com" autocomplete="email" required>
+              <button type="submit" class="btn subscribe-submit">Subscribe</button>
+            </div>
+            <div class="cf-turnstile" data-sitekey="{{ site.turnstile.siteKey }}" data-size="flexible"></div>
+            <p class="subscribe-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">

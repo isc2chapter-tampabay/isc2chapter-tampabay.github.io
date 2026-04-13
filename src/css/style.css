@@ -606,22 +606,105 @@ a.feature-card, .feature-card--link {
 }
 
 /* ---------- Pre-footer CTA ---------- */
-.footer-cta {
-  background: linear-gradient(135deg, var(--green) 0%, var(--green-hover) 100%);
+/* Stay Connected (footer pre-section) */
+.stay-connected {
+  background: var(--light-gray);
+  padding: 72px 20px;
+}
+.stay-connected .section-heading { margin-bottom: 40px; }
+.feature-card--primary {
+  position: relative;
+  border: 2px solid var(--green);
+}
+.primary-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 14px;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   color: var(--white);
-  text-align: center;
-  padding: 48px 20px;
+  background: var(--green);
+  border-radius: var(--radius-xl);
+  white-space: nowrap;
 }
-.footer-cta .container {
+.feature-card-cta--muted {
+  color: var(--muted-text);
+  font-weight: 500;
+}
+
+/* Subscribe form (Stay Connected > Email Announcements card) */
+.feature-card--form {
+  cursor: default;
+}
+.feature-card--form:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+.feature-card--form:hover .feature-icon {
+  transform: none;
+}
+.subscribe-form {
+  margin-top: 16px;
+  text-align: left;
+}
+.subscribe-form-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
 }
-.footer-cta p {
-  font-size: 1.05rem;
-  margin: 0;
+.subscribe-form input[type="email"] {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: .9rem;
+  font-family: inherit;
+  background: var(--white);
+  color: var(--dark);
+}
+.subscribe-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(84,128,75,0.15);
+}
+.subscribe-submit {
+  padding: 10px 16px;
+  font-size: .85rem;
+  white-space: nowrap;
+}
+.subscribe-submit:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+.cf-turnstile {
+  margin: 8px 0 4px;
+  min-height: 65px;
+}
+.subscribe-feedback {
+  margin: 6px 0 0;
+  font-size: .85rem;
+  min-height: 1.2em;
+  line-height: 1.4;
+}
+.subscribe-feedback--error { color: #b91c1c; }
+.subscribe-feedback--success { color: var(--green); }
+
+/* Screen-reader-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ---------- Footer ---------- */
@@ -1473,7 +1556,7 @@ a.event-meta-link:hover {
 
   /* Footer */
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-  .footer-cta .container { flex-direction: column; text-align: center; }
+  .stay-connected { padding: 48px 20px; }
 
   /* Membership */
   .membership-actions { flex-direction: column; }
