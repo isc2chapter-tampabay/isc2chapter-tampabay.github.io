@@ -1,9 +1,9 @@
   <!-- Announcement Bar -->
   <div class="announcement-bar">
     <div class="container">
-      <a href="/scholarships/">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <strong>B &amp; B Cyber Solutions Scholarship:</strong> Two $500 awards for cybersecurity students. You must be present at BSides Tampa to win! Apply by April 1.
+      <a href="https://bsidestampa.net" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="11" x2="21" y2="11"/></svg>
+        <strong>BSides Tampa 2026 — Saturday, May 16 at USF.</strong> Our biggest event of the year. Tickets on sale now at bsidestampa.net
         <span class="announcement-arrow">→</span>
       </a>
     </div>
@@ -21,7 +21,7 @@
         </button>
         <ul>
           {%- for item in navigation %}
-          <li><a href="{{ item.url }}"{% if item.url === "/scholarships/" %} class="nav-scholarship{% if page.url === item.url %} active{% endif %}"{% elif page.url === item.url %} class="active"{% endif %}>{{ item.label }}</a></li>
+          <li><a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.label }}</a></li>
           {%- endfor %}
         </ul>
         <a href="/membership/" class="nav-cta">Become a Member</a>

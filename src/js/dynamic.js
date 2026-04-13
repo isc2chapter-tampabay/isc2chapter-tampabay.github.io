@@ -148,12 +148,6 @@
       const detailLink = el('a', { href: ev.url, class: 'event-meta-pill event-meta-link' }, 'Details →');
       meta.appendChild(detailLink);
     }
-    if (isUpcoming && ev.type === 'community') {
-      const scholarLink = el('a', { href: '/scholarships/', class: 'event-meta-pill event-meta-scholarship' });
-      scholarLink.insertAdjacentHTML('afterbegin', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>');
-      scholarLink.appendChild(document.createTextNode(' Scholarships Available'));
-      meta.appendChild(scholarLink);
-    }
     details.appendChild(meta);
     card.appendChild(details);
     return card;

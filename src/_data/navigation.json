@@ -2,9 +2,7 @@
   { "label": "Home", "url": "/" },
   { "label": "About", "url": "/about/" },
   { "label": "Events", "url": "/events/" },
-  { "label": "Sponsorship", "url": "/sponsorship/" },
-  { "label": "Volunteer", "url": "/volunteer/" },
-  { "label": "Speak", "url": "/cfp/" },
-  { "label": "Resources", "url": "/resources/" },
-  { "label": "Scholarships", "url": "/scholarships/" }
+  { "label": "Learn", "url": "/learn/" },
+  { "label": "Get Involved", "url": "/get-involved/" },
+  { "label": "Resources", "url": "/resources/" }
 ]
