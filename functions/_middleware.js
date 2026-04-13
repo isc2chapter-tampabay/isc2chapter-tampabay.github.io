@@ -59,6 +59,11 @@ export async function onRequest(context) {
   const url = new URL(request.url);
   const path = url.pathname;
 
+  // Public write endpoint: email signup has its own Turnstile bot check
+  if (path === "/api/subscribe") {
+    return context.next();
+  }
+
   // Public routes: GET on /api/* is open (for build-time fetch and public pages)
   if (path.startsWith("/api/") && request.method === "GET") {
     return context.next();
