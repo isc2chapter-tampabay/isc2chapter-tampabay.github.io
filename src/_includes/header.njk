@@ -21,7 +21,16 @@
         </button>
         <ul>
           {%- for item in navigation %}
-          <li><a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.label }}</a></li>
+          <li{% if item.children %} class="has-dropdown"{% endif %}>
+            <a href="{{ item.url }}"{% if page.url === item.url %} class="active"{% endif %}>{{ item.label }}{% if item.children %} <span class="dropdown-caret" aria-hidden="true">▾</span>{% endif %}</a>
+            {% if item.children %}
+            <ul class="dropdown">
+              {%- for child in item.children %}
+              <li><a href="{{ child.url }}"{% if page.url === child.url %} class="active"{% endif %}>{{ child.label }}</a></li>
+              {%- endfor %}
+            </ul>
+            {% endif %}
+          </li>
           {%- endfor %}
         </ul>
         <a href="/membership/" class="nav-cta">Become a Member</a>

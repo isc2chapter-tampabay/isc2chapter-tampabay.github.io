@@ -2,7 +2,25 @@
   { "label": "Home", "url": "/" },
   { "label": "About", "url": "/about/" },
   { "label": "Events", "url": "/events/" },
-  { "label": "Learn", "url": "/learn/" },
-  { "label": "Get Involved", "url": "/get-involved/" },
+  {
+    "label": "Learn",
+    "url": "/learn/",
+    "children": [
+      { "label": "Resources", "url": "/resources/" },
+      { "label": "Study Groups", "url": "/study-groups/" },
+      { "label": "CPE Info", "url": "/cpe/" }
+    ]
+  },
+  {
+    "label": "Get Involved",
+    "url": "/get-involved/",
+    "children": [
+      { "label": "Volunteer", "url": "/volunteer/" },
+      { "label": "Speak", "url": "/cfp/" },
+      { "label": "Mentorship", "url": "/mentorship/" },
+      { "label": "Scholarships", "url": "/scholarships/" },
+      { "label": "Sponsorship", "url": "/sponsorship/" }
+    ]
+  },
   { "label": "Resources", "url": "/resources/" }
 ]
