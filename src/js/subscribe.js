@@ -19,11 +19,11 @@
       const turnstileToken = turnstileField ? turnstileField.value : "";
 
       if (!email) {
-        setFeedback("Please enter your email.", "error");
+        showError("Please enter your email.");
         return;
       }
       if (!turnstileToken) {
-        setFeedback("Please complete the bot check above.", "error");
+        showError("Please complete the bot check above.");
         return;
       }
 
@@ -39,15 +39,13 @@
         const data = await res.json().catch(() => ({}));
 
         if (res.ok && data.ok) {
-          setFeedback(data.message || "Check your inbox to confirm.", "success");
-          form.reset();
-          resetTurnstile(form);
+          showSuccess(data.message || "Check your inbox to confirm.");
         } else {
-          setFeedback(data.error || "Something went wrong. Please try again.", "error");
+          showError(data.error || "Something went wrong. Please try again.");
           resetTurnstile(form);
         }
       } catch (err) {
-        setFeedback("Network error. Please try again.", "error");
+        showError("Network error. Please try again.");
       } finally {
         submit.disabled = false;
       }
@@ -57,6 +55,36 @@
       feedback.textContent = msg;
       feedback.className = "subscribe-feedback" + (kind ? " subscribe-feedback--" + kind : "");
     }
+
+    function showError(msg) {
+      setFeedback(msg, "error");
+      scrollIntoView(feedback);
+    }
+
+    // On success, replace the form's inputs with a prominent confirmation
+    // panel so the user sees their submission went through, even if they're
+    // not looking at the feedback area. Also scrolls into view.
+    function showSuccess(message) {
+      const panel = document.createElement("div");
+      panel.className = "subscribe-success";
+      panel.setAttribute("role", "status");
+      panel.innerHTML =
+        '<svg class="subscribe-success-icon" viewBox="0 0 24 24" aria-hidden="true">' +
+        '<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>' +
+        "</svg>";
+      const p = document.createElement("p");
+      p.className = "subscribe-success-message";
+      p.textContent = message;
+      panel.appendChild(p);
+
+      form.replaceChildren(panel);
+      scrollIntoView(panel);
+    }
+  }
+
+  function scrollIntoView(el) {
+    if (!el || typeof el.scrollIntoView !== "function") return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   // Turnstile renders a widget per `.cf-turnstile` element on the page. Resetting

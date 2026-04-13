@@ -700,6 +700,34 @@ a.feature-card, .feature-card--link {
   margin-top: 24px;
 }
 
+/* Offset anchor-link scroll so the sticky header doesn't cover the target */
+#signup { scroll-margin-top: 80px; }
+
+/* Success panel (replaces the form after a successful signup) */
+.subscribe-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 28px 24px;
+  background: var(--green-light);
+  border: 2px solid var(--green);
+  border-radius: var(--radius-md);
+}
+.subscribe-success-icon {
+  width: 48px;
+  height: 48px;
+  fill: var(--green);
+}
+.subscribe-success-message {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.5;
+}
+
 /* Screen-reader-only utility */
 .sr-only {
   position: absolute;
