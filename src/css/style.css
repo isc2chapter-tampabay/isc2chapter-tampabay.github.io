@@ -1778,7 +1778,7 @@ a.event-meta-link:hover {
   /* Scholarships */
   .scholarship-highlights { grid-template-columns: 1fr; max-width: 320px; margin-left: auto; margin-right: auto; }
   .scholarship-callout-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
-  .scholarship-callout-stats { max-width: 320px; margin: 0 auto; }
+  .scholarship-callout-stats { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
   .scholarship-callout-text .btn { width: 100%; text-align: center; }
 
   /* Form wrapper */
