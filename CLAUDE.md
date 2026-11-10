@@ -14,7 +14,7 @@
 - Cloudflare Pages Functions in `functions/` serve `/api/*` (D1, R2 uploads, subscribe); `functions/_middleware.js` gates writes and `/admin` behind Cloudflare Access
 - All pages use `base.njk` layout with shared `header.njk` and `footer.njk`
 - Plain CSS with custom properties in `:root` (no preprocessor)
-- Deployed to **Cloudflare Pages** (`isc2-tampa-bay-chapter`) via GitHub Actions + wrangler on push to `main`
+- Deployed to **Cloudflare Pages** (`isc2-tampa-bay-chapter`), built from this GitHub repo on push to `main` (`.github/workflows/deploy.yml` also defines a wrangler deploy)
 - Custom domain: `isc2chapter-tampabay.org`
 
 ## Conventions
